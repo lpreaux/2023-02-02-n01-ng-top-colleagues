@@ -3,6 +3,6 @@
     <img mat-card-md-image src="{{colleague.photo}}" alt="">
     <mat-card-title>{{colleague.pseudo}}</mat-card-title>
     {{colleague.score}}
-    <tc-like-hate></tc-like-hate>
+    <tc-like-hate (likeHateEmiter)="updateScore($event)"></tc-like-hate>
   </mat-card-content>
 </mat-card>

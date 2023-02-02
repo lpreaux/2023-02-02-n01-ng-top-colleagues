@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
+import {LikeHate} from "../../../models/like-hate";
 
 @Component({
   selector: 'tc-colleague',
@@ -12,4 +13,14 @@ export class ColleagueComponent {
     score: 0,
     photo: ""
   };
+
+  updateScore(likeHate: LikeHate) {
+    switch (likeHate) {
+      case LikeHate.LIKE:
+        this.colleague.score ++;
+        break;
+      case LikeHate.HATE:
+        this.colleague.score --;
+    }
+  }
 }
