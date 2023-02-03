@@ -4,8 +4,7 @@ import {LikeHate} from "../../../models/like-hate";
 
 @Component({
   selector: 'tc-colleague',
-  templateUrl: './colleague.component.html',
-  styleUrls: ['./colleague.component.scss']
+  templateUrl: './colleague.component.html'
 })
 export class ColleagueComponent implements OnInit{
   @Input() colleague: Colleague = {

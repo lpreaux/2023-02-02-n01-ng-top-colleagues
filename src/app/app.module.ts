@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import {WelcomeModule} from "./welcome/welcome.module";
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {WelcomeModule} from "./welcome/welcome.module";
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    WelcomeModule
+    WelcomeModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

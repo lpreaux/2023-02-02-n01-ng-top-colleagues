@@ -1,21 +1,27 @@
-section {
+.tc-section {
   container-type: inline-size;
 }
 
-@container (inline-size > 305px) {
+@container (inline-size >= 350px) {
   .tc-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@container (inline-size > 455px) {
+@container (inline-size >= 520px) {
   .tc-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@container (inline-size > 600px) {
+@container (inline-size >= 705px) {
   .tc-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@container (inline-size >= 860px) {
+  .tc-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 

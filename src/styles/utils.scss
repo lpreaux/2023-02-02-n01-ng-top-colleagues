@@ -1,0 +1,26 @@
+
+
+// Text management
+
+.text-center {
+  text-align: center;
+}
+
+
+// Content management
+
+.tc-content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-around;
+}
+
+
+// Grid template
+
+.tc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}

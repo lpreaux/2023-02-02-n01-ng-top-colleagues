@@ -19,8 +19,7 @@ const THUMBDOWN_ICON =
 
 @Component({
   selector: 'tc-like-hate',
-  templateUrl: './like-hate.component.html',
-  styleUrls: ['./like-hate.component.scss']
+  templateUrl: './like-hate.component.html'
 })
 export class LikeHateComponent {
 

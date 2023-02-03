@@ -14,6 +14,7 @@ import { VotingHistoryItemComponent } from './components/voting-history-item/vot
 import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
 
 import { ScorePipe } from './pipes/score.pipe';
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ScorePipe } from './pipes/score.pipe';
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     ScorePipe

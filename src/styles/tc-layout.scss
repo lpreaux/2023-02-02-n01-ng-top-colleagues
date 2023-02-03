@@ -1,0 +1,13 @@
+
+
+// Sections
+
+.tc-section {
+  &.tc-section-layout{
+    margin: 10px;
+
+    .tc-section--title {
+      padding: 10px;
+    }
+  }
+}
