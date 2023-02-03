@@ -4,8 +4,7 @@ import {LikeHate} from "../../../models/like-hate";
 
 @Component({
   selector: 'tc-voting-history',
-  templateUrl: './voting-history.component.html',
-  styleUrls: ['./voting-history.component.scss']
+  templateUrl: './voting-history.component.html'
 })
 export class VotingHistoryComponent {
 
@@ -29,7 +28,7 @@ export class VotingHistoryComponent {
   ];
 
 
-  deleteBtn(event: any) {
-    console.dir(event)
+  onDeleteRequest(vote: Vote) {
+    this.votes.splice(this.votes.indexOf(vote), 1)
   }
 }

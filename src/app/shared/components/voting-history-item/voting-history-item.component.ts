@@ -5,15 +5,11 @@ import {ScorePipe} from "../../pipes/score.pipe";
 
 @Component({
   selector: 'tc-voting-history-item',
-  templateUrl: './voting-history-item.component.html',
-  styleUrls: ['./voting-history-item.component.scss']
+  templateUrl: './voting-history-item.component.html'
 })
 export class VotingHistoryItemComponent implements OnInit{
   @Input() vote?: Vote;
-  @Output() deleteButton = new EventEmitter<{
-    type: string,
-    vote?: Vote
-  }>();
+  @Output() deleteRequest = new EventEmitter<Vote>();
 
   message?: string;
 
@@ -35,9 +31,6 @@ export class VotingHistoryItemComponent implements OnInit{
 
 
   delete() {
-    this.deleteButton.emit({
-      type: "delete",
-      vote: this.vote
-    });
+    this.deleteRequest.emit(this.vote);
   }
 }
