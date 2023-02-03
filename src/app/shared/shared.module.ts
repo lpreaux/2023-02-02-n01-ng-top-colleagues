@@ -7,6 +7,7 @@ import {MatCardModule} from "@angular/material/card";
 import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatIconModule} from "@angular/material/icon";
+import { ScorePipe } from './pipes/score.pipe';
 
 
 
@@ -14,7 +15,8 @@ import {MatIconModule} from "@angular/material/icon";
   declarations: [
     LikeHateComponent,
     ColleagueComponent,
-    ColleagueListComponent
+    ColleagueListComponent,
+    ScorePipe
   ],
     exports: [
         LikeHateComponent,
