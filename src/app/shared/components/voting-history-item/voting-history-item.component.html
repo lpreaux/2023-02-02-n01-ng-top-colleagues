@@ -1,0 +1,14 @@
+<section>
+  <mat-card class="tc-mat-card-horizontal">
+    <img mat-card-image src="{{ vote?.colleague?.photo }}" alt="">
+    <mat-card-content>
+      <mat-card-title>{{ vote?.colleague?.pseudo | uppercase }}</mat-card-title>
+      <mat-card-content>{{ message }}</mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button color="warn" (click)="delete()" aria-label="Suppression">
+        <mat-icon fontIcon="delete">Suppression</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

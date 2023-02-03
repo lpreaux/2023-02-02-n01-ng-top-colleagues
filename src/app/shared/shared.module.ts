@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LikeHateComponent } from './components/like-hate/like-hate.component';
-import {MatButtonModule} from "@angular/material/button";
-import { ColleagueComponent } from './components/colleague/colleague.component';
-import {MatCardModule} from "@angular/material/card";
-import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
-import {MatGridListModule} from "@angular/material/grid-list";
-import {MatIconModule} from "@angular/material/icon";
-import { ScorePipe } from './pipes/score.pipe';
 
+import { MatGridListModule } from "@angular/material/grid-list";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+
+
+import { LikeHateComponent } from './components/like-hate/like-hate.component';
+import { ColleagueComponent } from './components/colleague/colleague.component';
+import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
+import { VotingHistoryItemComponent } from './components/voting-history-item/voting-history-item.component';
+
+import { ScorePipe } from './pipes/score.pipe';
 
 
 @NgModule({
@@ -16,19 +20,22 @@ import { ScorePipe } from './pipes/score.pipe';
     LikeHateComponent,
     ColleagueComponent,
     ColleagueListComponent,
-    ScorePipe
+    VotingHistoryItemComponent,
+    ScorePipe,
   ],
-    exports: [
-        LikeHateComponent,
-        ColleagueComponent,
-        ColleagueListComponent
-    ],
+  exports: [
+    ColleagueListComponent,
+    VotingHistoryItemComponent
+  ],
   imports: [
     CommonModule,
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
     MatIconModule
+  ],
+  providers: [
+    ScorePipe
   ]
 })
 export class SharedModule { }

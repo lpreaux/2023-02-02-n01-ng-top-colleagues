@@ -20,4 +20,21 @@ mat-card {
   mat-card-footer {
     margin-bottom: 1em;
   }
+
+  &.tc-mat-card-horizontal {
+    flex-direction: row;
+    align-content: space-around;
+
+    .mat-mdc-card-image {
+
+      border-top-left-radius: inherit;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: inherit;
+    }
+
+    .mat-mdc-card-content {
+      flex-grow: 1;
+    }
+  }
+
 }
