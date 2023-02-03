@@ -20,12 +20,12 @@ export class ColleagueListComponent {
     },
     {
       pseudo: "mSmith",
-      score: -1,
+      score: 1000,
       photo: "https://randomuser.me/api/portraits/women/75.jpg"
     },
     {
       pseudo: "jSparrow",
-      score: 5,
+      score: -1000,
       photo: "https://randomuser.me/api/portraits/women/65.jpg"
     },
     {

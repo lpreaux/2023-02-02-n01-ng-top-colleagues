@@ -7,18 +7,18 @@ section {
   grid-template-columns: 1fr;
   gap: 10px;
 }
-@container (inline-size > 380px) {
+@container (inline-size > 305px) {
   .tc-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@container (inline-size > 570px) {
+@container (inline-size > 455px) {
   .tc-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@container (inline-size > 760px) {
+@container (inline-size > 600px) {
   .tc-grid {
     grid-template-columns: repeat(4, 1fr);
   }
