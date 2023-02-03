@@ -1,0 +1,13 @@
+<section class="tc-section">
+  <div class="tc-section--title">
+    <h2>Historique</h2>
+  </div>
+
+  <div class="tc-section--content">
+    <div class="tc-grid">
+      <div *ngFor="let vote of votes" class="tc-grid-item">
+        <tc-voting-history-item [vote]="vote"></tc-voting-history-item>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,11 +2,6 @@ section {
   container-type: inline-size;
 }
 
-.tc-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
 @container (inline-size > 305px) {
   .tc-grid {
     grid-template-columns: repeat(2, 1fr);
