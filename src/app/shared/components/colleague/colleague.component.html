@@ -1,8 +1,10 @@
 <mat-card>
+  <img mat-card-image src="{{colleague.photo}}" alt="">
   <mat-card-content>
-    <img mat-card-md-image src="{{colleague.photo}}" alt="">
     <mat-card-title>{{colleague.pseudo | uppercase}}</mat-card-title>
     {{colleague.score}}
-    <tc-like-hate [likeButtonDisabled]="likeButtonDisabled" [hateButtonDisabled]="hateButtonDisabled" (likeHateEmiter)="updateScore($event)"></tc-like-hate>
   </mat-card-content>
+  <mat-card-footer>
+    <tc-like-hate [likeButtonDisabled]="likeButtonDisabled" [hateButtonDisabled]="hateButtonDisabled" (likeHateEmiter)="updateScore($event)"></tc-like-hate>
+  </mat-card-footer>
 </mat-card>
