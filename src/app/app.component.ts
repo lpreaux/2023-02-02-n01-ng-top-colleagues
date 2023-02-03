@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'top-colleagues';
   colleague: Colleague = {
     pseudo: "jSmith",
-    score: 0,
+    score: 1000,
     photo: "https://randomuser.me/api/portraits/men/75.jpg"
   };
 

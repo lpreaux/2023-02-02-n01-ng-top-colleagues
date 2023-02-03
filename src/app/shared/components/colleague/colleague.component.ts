@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
 
@@ -7,12 +7,20 @@ import {LikeHate} from "../../../models/like-hate";
   templateUrl: './colleague.component.html',
   styleUrls: ['./colleague.component.scss']
 })
-export class ColleagueComponent {
+export class ColleagueComponent implements OnInit{
   @Input() colleague: Colleague = {
     pseudo: "",
     score: 0,
     photo: ""
   };
+
+  likeButtonDisabled = false;
+  hateButtonDisabled = false;
+
+  ngOnInit(): void {
+    this.likeHateDisableling();
+  }
+
 
   updateScore(likeHate: LikeHate) {
     switch (likeHate) {
@@ -22,5 +30,11 @@ export class ColleagueComponent {
       case LikeHate.HATE:
         this.colleague.score --;
     }
+    this.likeHateDisableling()
+  }
+
+  likeHateDisableling() {
+    this.likeButtonDisabled = this.colleague.score >= 1000;
+    this.hateButtonDisabled = this.colleague.score <= -1000;
   }
 }
