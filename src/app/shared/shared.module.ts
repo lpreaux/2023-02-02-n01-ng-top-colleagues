@@ -6,6 +6,7 @@ import { ColleagueComponent } from './components/colleague/colleague.component';
 import {MatCardModule} from "@angular/material/card";
 import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -24,7 +25,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
     CommonModule,
     MatButtonModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }
