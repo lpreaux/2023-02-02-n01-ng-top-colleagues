@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Colleague} from "./models/colleague";
 
 @Component({
   selector: 'tc-root',
@@ -8,11 +7,6 @@ import {Colleague} from "./models/colleague";
 })
 export class AppComponent {
   title = 'top-colleagues';
-  colleague: Colleague = {
-    pseudo: "jSmith",
-    score: 1000,
-    photo: "https://randomuser.me/api/portraits/men/75.jpg"
-  };
 
   constructor() {
   }

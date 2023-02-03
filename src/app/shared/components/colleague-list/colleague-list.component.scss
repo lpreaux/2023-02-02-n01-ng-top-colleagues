@@ -1,0 +1,20 @@
+.tc-grid {
+  display: grid;
+}
+
+.tc-grid-item {
+  max-width: 25em;
+  margin: 10px;
+}
+
+@media (min-width: 650px) {
+  .tc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .tc-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
