@@ -1,0 +1,18 @@
+<p>welcome works!</p>
+<section class="tc-section tc-page-layout">
+  <main class="tc-page-layout--main">
+    <section class="tc-section tc-section-layout">
+      <div class="tc-section-layout--header">
+        <button mat-icon-button>
+          <mat-icon svgIcon="refresh" (click)="refresh()"></mat-icon>
+        </button>
+      </div>
+      <div class="tc-section-layout--content">
+        <tc-colleague-list></tc-colleague-list>
+      </div>
+    </section>
+  </main>
+  <aside class="tc-page-layout--side">
+    <tc-voting-history></tc-voting-history>
+  </aside>
+</section>

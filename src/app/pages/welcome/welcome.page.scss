@@ -1,0 +1,15 @@
+.tc-page-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "main main side";
+
+  .tc-page-layout--main {
+    grid-area: main;
+  }
+
+  .tc-page-layout--side {
+    grid-area: side;
+    min-width: 580px;
+  }
+}
