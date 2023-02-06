@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Colleague} from "../../../models/colleague";
 import {LikeHate} from "../../../models/like-hate";
+import {VoteService} from "../../../providers/vote.service";
 
 @Component({
   selector: 'tc-colleague',
@@ -20,14 +21,18 @@ export class ColleagueComponent implements OnInit{
     this.likeHateDisableling();
   }
 
+  constructor(private voteService: VoteService) {
+  }
 
   updateScore(likeHate: LikeHate) {
     switch (likeHate) {
       case LikeHate.LIKE:
         this.colleague.score ++;
+        this.voteService.newVote({colleague: this.colleague, vote: LikeHate.LIKE});
         break;
       case LikeHate.HATE:
         this.colleague.score --;
+        this.voteService.newVote({colleague: this.colleague, vote: LikeHate.HATE});
     }
     this.likeHateDisableling()
   }

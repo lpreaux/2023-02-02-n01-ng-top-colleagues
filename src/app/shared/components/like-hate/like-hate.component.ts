@@ -12,7 +12,6 @@ export class LikeHateComponent {
   @Input() hateButtonDisabled = false;
   @Output() likeHateEmiter = new EventEmitter<LikeHate>();
 
-
   like() {
     this.likeHateEmiter.emit(LikeHate.LIKE);
   }

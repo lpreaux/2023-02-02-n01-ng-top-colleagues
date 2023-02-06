@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
 import {Vote} from "../models/vote";
 import {LikeHate} from "../models/like-hate";
+import {Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoteService {
 
-  constructor() { }
+  private voteAction = new Subject<LikeHate>();
+
+  get newVoteObs() {
+    return this.voteAction.asObservable();
+  }
 
   list(): Vote[] {
     return [
@@ -28,5 +33,10 @@ export class VoteService {
         vote: LikeHate.HATE
       }
     ];
+  }
+
+  newVote(vote: Vote) {
+
+    this.voteAction.next(vote.vote);
   }
 }
