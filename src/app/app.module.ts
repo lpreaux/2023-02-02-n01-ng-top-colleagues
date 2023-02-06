@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { SharedModule } from "./shared/shared.module";
+import { WelcomeModule } from "./pages/welcome/welcome.module";
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {SharedModule} from "./shared/shared.module";
-import {WelcomeModule} from "./welcome/welcome.module";
-import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -16,7 +16,6 @@ import {MatListModule} from "@angular/material/list";
     BrowserAnimationsModule,
     SharedModule,
     WelcomeModule,
-    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
