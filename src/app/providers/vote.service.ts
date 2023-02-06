@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Vote} from "../models/vote";
 import {LikeHate} from "../models/like-hate";
 import {Subject} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class VoteService {
   get newVoteObs() {
     return this.voteAction.asObservable();
   }
+
+  constructor(private http: HttpClient) {}
 
   list(): Vote[] {
     return [
@@ -36,7 +39,14 @@ export class VoteService {
   }
 
   newVote(vote: Vote) {
-
+    console.log({
+      pseudo: vote.colleague.pseudo,
+      like_hate: vote.vote.toString()
+    });
+    this.http.post("https://dev.cleverapps.io/api/v2/votes", {
+      pseudo: vote.colleague.pseudo,
+      like_hate: vote.vote.toString()
+    }).subscribe(() => {});
     this.voteAction.next(vote.vote);
   }
 }
