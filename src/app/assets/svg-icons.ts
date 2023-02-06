@@ -1,6 +1,4 @@
-import {SvgIcon} from "../models/svg-icon";
-
-const svgIcons: SvgIcon[] = [
+const svgIcons = [
   {
     name: "thumb-up",
     svg: `

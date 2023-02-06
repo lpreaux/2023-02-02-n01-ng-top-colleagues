@@ -3,7 +3,7 @@ import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 
 import { SvgIcon } from "../models/svg-icon";
-import svgIcons from "../data/svg-icons.data";
+import svgIcons from "../../assets/svg-icons";
 
 @Injectable({
   providedIn: 'root'
