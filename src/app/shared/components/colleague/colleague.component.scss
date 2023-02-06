@@ -1,0 +1,19 @@
+$size: 150px;
+
+mat-card, mat-card > * {
+  overflow: hidden;
+}
+
+mat-card {
+  width: $size;
+}
+
+img{
+  aspect-ratio: 1 / 1;
+  width: $size;
+}
+
+mat-card-title {
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -6,6 +6,7 @@ import { SharedModule } from "./shared/shared.module";
 import { WelcomeModule } from "./pages/welcome/welcome.module";
 
 import { AppComponent } from './app.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     SharedModule,
     WelcomeModule,
+    HttpClientModule,
   ],
   providers: [
   ],

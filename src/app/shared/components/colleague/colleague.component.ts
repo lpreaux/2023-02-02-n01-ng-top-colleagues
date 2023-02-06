@@ -5,7 +5,8 @@ import {VoteService} from "../../../providers/vote.service";
 
 @Component({
   selector: 'tc-colleague',
-  templateUrl: './colleague.component.html'
+  templateUrl: './colleague.component.html',
+  styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent implements OnInit{
   @Input() colleague: Colleague = {

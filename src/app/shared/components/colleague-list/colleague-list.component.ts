@@ -9,8 +9,9 @@ import {ColleagueService} from "../../../providers/colleague.service";
 })
 export class ColleagueListComponent {
 
-  colleagues: Colleague[] = this.colleagueService.list();
+  colleagues: Colleague[] = [];
 
   constructor(private colleagueService: ColleagueService) {
+    this.colleagueService.colleagueObs.subscribe(colleagues => this.colleagues = colleagues);
   }
 }
