@@ -1,9 +1,9 @@
 <section class="tc-section tc-section-layout">
-  <div class="tc-section--title">
+  <div class="tc-section-layout--title">
     <h2>Historique</h2>
   </div>
 
-  <div class="tc-section--content">
+  <div class="tc-section-layout--content">
     <div class="tc-grid">
       <div *ngFor="let vote of votes; last as last" class="tc-grid-item">
         <tc-voting-history-item [vote]="vote" (deleteRequest)="onDeleteRequest($event)"></tc-voting-history-item>

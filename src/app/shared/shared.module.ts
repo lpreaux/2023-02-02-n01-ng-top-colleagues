@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
 
+import { LocalMaterialModule } from "../local-mat-icons/local-material.module";
 
 import { LikeHateComponent } from './components/like-hate/like-hate.component';
 import { ColleagueComponent } from './components/colleague/colleague.component';
@@ -14,7 +15,6 @@ import { VotingHistoryItemComponent } from './components/voting-history-item/vot
 import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
 
 import { ScorePipe } from './pipes/score.pipe';
-import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -35,8 +35,8 @@ import {MatListModule} from "@angular/material/list";
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
-    MatIconModule,
-    MatListModule
+    MatListModule,
+    LocalMaterialModule,
   ],
   providers: [
     ScorePipe
