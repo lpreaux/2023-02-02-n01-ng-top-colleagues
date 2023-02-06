@@ -13,7 +13,6 @@ export class VotingHistoryComponent {
   constructor(private voteService: VoteService) {
   }
 
-
   onDeleteRequest(vote: Vote) {
     this.votes.splice(this.votes.indexOf(vote), 1)
   }
