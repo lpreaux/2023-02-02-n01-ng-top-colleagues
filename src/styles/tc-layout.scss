@@ -3,6 +3,8 @@
 // Sections
 
 .tc-section {
+
+
   &.tc-section-layout{
     margin: 10px;
 
@@ -10,4 +12,13 @@
       padding: 10px;
     }
   }
+}
+
+// UI Container
+.tc-ui-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  width: fit-content;
+  padding: 10px;
 }

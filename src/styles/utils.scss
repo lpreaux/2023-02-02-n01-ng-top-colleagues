@@ -9,7 +9,7 @@
 
 // Content management
 
-.tc-content-center {
+.content-center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,8 +19,23 @@
 
 // Grid template
 
-.tc-grid {
+.grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
+}
+
+
+// Flex
+.flex {
+  display: flex;
+  gap: 10px;
+
+  &.f-row {
+    flex-direction: row;
+  }
+
+  &.f-column {
+    flex-direction: column;
+  }
 }

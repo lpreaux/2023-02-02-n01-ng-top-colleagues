@@ -13,6 +13,7 @@ import { ColleagueComponent } from './components/colleague/colleague.component';
 import { ColleagueListComponent } from './components/colleague-list/colleague-list.component';
 import { VotingHistoryItemComponent } from './components/voting-history-item/voting-history-item.component';
 import { VotingHistoryComponent } from './components/voting-history/voting-history.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 import { ScorePipe } from './pipes/score.pipe';
 
@@ -24,11 +25,13 @@ import { ScorePipe } from './pipes/score.pipe';
     ColleagueListComponent,
     VotingHistoryItemComponent,
     VotingHistoryComponent,
-    ScorePipe
+    ScorePipe,
+    CounterComponent
   ],
   exports: [
     ColleagueListComponent,
-    VotingHistoryComponent
+    VotingHistoryComponent,
+    CounterComponent
   ],
   imports: [
     CommonModule,
