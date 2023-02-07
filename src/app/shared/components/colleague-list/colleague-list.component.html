@@ -1,6 +1,6 @@
 <section class="tc-section tc-section-layout content-center">
   <div class="grid">
-    <div *ngFor="let colleague of colleagues" class="tc-grid-item">
+    <div *ngFor="let colleague of colleagues$ | async" class="tc-grid-item">
       <tc-colleague [colleague]="colleague"></tc-colleague>
     </div>
   </div>
