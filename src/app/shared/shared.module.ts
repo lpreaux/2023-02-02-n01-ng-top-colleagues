@@ -18,6 +18,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { ScorePipe } from './pipes/score.pipe';
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import {FormsModule} from "@angular/forms";
     MatListModule,
     LocalMaterialModule,
     FormsModule,
+    MatInputModule,
   ],
   providers: [
     ScorePipe
