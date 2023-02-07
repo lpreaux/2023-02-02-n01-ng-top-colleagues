@@ -1,0 +1,36 @@
+<p>create-colleague-forms works!</p>
+<section class="tc-section">
+  <form (ngSubmit)="submit()" #createColleagueForm="ngForm">
+
+    <label for="pseudo">Pseudo</label>
+    <input id="pseudo" [(ngModel)]="colleague.pseudo" name="pseudo" #pseudo="ngModel" required >
+    <p *ngIf="pseudo.dirty && pseudo.invalid">
+      Pseudo invalide
+    </p>
+    <br>
+
+    <label for="last">Nom</label>
+    <input id="last" [(ngModel)]="colleague.last" name="last" #last="ngModel" required minlength="2">
+    <p *ngIf="last.dirty && last.invalid">
+      Nom invalide
+    </p>
+    <br>
+
+    <label for="first">Prénom</label>
+    <input id="first" [(ngModel)]="colleague.first" name="first" #first="ngModel" required minlength="2">
+    <p *ngIf="first.dirty && first.invalid">
+      Prénom invalide
+    </p>
+    <br>
+
+    <label for="photo">Photo URL</label>
+    <input id="photo" [(ngModel)]="colleague.photo" name="photo" #photo="ngModel" required >
+    <p *ngIf="photo.dirty && photo.invalid">
+      Url de la photo invalide
+    </p>
+    <br>
+
+    <button type="submit" [disabled]="createColleagueForm.invalid">Ajouter</button>
+
+  </form>
+</section>

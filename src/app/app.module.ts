@@ -7,6 +7,7 @@ import { WelcomeModule } from "./pages/welcome/welcome.module";
 
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
+import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
     SharedModule,
     WelcomeModule,
     HttpClientModule,
+    CreateColleagueModule,
   ],
   providers: [
   ],

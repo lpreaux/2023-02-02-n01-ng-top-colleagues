@@ -16,6 +16,8 @@ import { VotingHistoryComponent } from './components/voting-history/voting-histo
 import { CounterComponent } from './components/counter/counter.component';
 
 import { ScorePipe } from './pipes/score.pipe';
+import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,12 +28,14 @@ import { ScorePipe } from './pipes/score.pipe';
     VotingHistoryItemComponent,
     VotingHistoryComponent,
     ScorePipe,
-    CounterComponent
+    CounterComponent,
+    CreateColleagueFormsComponent
   ],
   exports: [
     ColleagueListComponent,
     VotingHistoryComponent,
-    CounterComponent
+    CounterComponent,
+    CreateColleagueFormsComponent
   ],
   imports: [
     CommonModule,
@@ -40,6 +44,7 @@ import { ScorePipe } from './pipes/score.pipe';
     MatGridListModule,
     MatListModule,
     LocalMaterialModule,
+    FormsModule,
   ],
   providers: [
     ScorePipe
