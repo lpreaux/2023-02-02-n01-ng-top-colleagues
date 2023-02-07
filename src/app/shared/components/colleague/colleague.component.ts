@@ -25,7 +25,7 @@ export class ColleagueComponent implements OnInit{
   constructor(private colleagueService: ColleagueService) {}
 
   updateScore(likeHate: LikeHate) {
-    this.colleagueService.vote(this.colleague, likeHate);
+    this.colleagueService.vote(this.colleague.pseudo, likeHate);
   }
 
   likeHateDisableling() {

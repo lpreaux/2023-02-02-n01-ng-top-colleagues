@@ -11,27 +11,32 @@ import {VoteService} from "./vote.service";
 })
 export class ColleagueService {
 
-  private colleagueSub: Subject<Colleague[]> = new Subject<Colleague[]>();
+  private colleagueListSub: Subject<Colleague[]> = new Subject<Colleague[]>();
 
-  get colleagueObs() {
-    return this.colleagueSub.asObservable();
+  get colleagueListObs() {
+    return this.colleagueListSub.asObservable();
   }
 
   constructor(
     private http: HttpClient,
     private voteService: VoteService
   ) {
+    this.updateColleagueList();
+    this.voteService.newVoteObs.subscribe(() => this.updateColleagueList());
+  }
+
+  updateColleagueList() {
     this.http.get<Colleague[]>("https://dev.cleverapps.io/api/v2/colleagues").subscribe({
       next: data => {
-        this.colleagueSub.next(data)
+        this.colleagueListSub.next(data)
       },
       error: () => {
-        this.colleagueSub.next([]);
+        this.colleagueListSub.next([]);
       }
     });
   }
 
-  vote(colleague: Colleague, likeHate: LikeHate) {
-    this.voteService.newVote({colleague: colleague, vote: likeHate});
+  vote(pseudo: string, likeHate: LikeHate) {
+    this.voteService.newVote({pseudo: pseudo, like_hate: likeHate});
   }
 }

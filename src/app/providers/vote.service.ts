@@ -3,11 +3,18 @@ import {Vote} from "../models/vote";
 import {LikeHate} from "../models/like-hate";
 import {Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {Colleague} from "../models/colleague";
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoteService {
+
+  private voteListSub = new Subject<Vote[]>();
+
+  get voteListObs() {
+    return this.voteListSub.asObservable();
+  }
 
   private voteAction = new Subject<LikeHate>();
 
@@ -15,38 +22,30 @@ export class VoteService {
     return this.voteAction.asObservable();
   }
 
-  constructor(private http: HttpClient) {}
-
-  list(): Vote[] {
-    return [
-      {
-        colleague: {
-          pseudo: "jSparrow",
-          score: -1000,
-          photo: "https://randomuser.me/api/portraits/women/65.jpg"
-        },
-        vote: LikeHate.LIKE
-      },
-      {
-        colleague: {
-          pseudo: "jSparrow",
-          score: -1000,
-          photo: "https://randomuser.me/api/portraits/women/65.jpg"
-        },
-        vote: LikeHate.HATE
-      }
-    ];
+  constructor(
+    private http: HttpClient,
+  ) {
+    this.updateVoteList();
   }
 
-  newVote(vote: Vote) {
-    console.log({
-      pseudo: vote.colleague.pseudo,
-      like_hate: vote.vote.toString()
+  updateVoteList() {
+    this.http.get<{colleague: Colleague, like_hate: LikeHate, score: number, created_date: Date}[]>("https://dev.cleverapps.io/api/v2/votes").subscribe(
+      data => this.voteListSub.next(data.map(
+        vote => {
+          return {
+            colleague: vote.colleague,
+            vote: vote.like_hate,
+            score: vote.score,
+            createdAt: vote.created_date
+          }
+        }
+      )));
+  }
+
+  newVote(newVoteInfo: {pseudo: string, like_hate: LikeHate}) {
+    this.http.post("https://dev.cleverapps.io/api/v2/votes", newVoteInfo).subscribe(() => {
+      this.updateVoteList();
+      this.voteAction.next(newVoteInfo.like_hate);
     });
-    this.http.post("https://dev.cleverapps.io/api/v2/votes", {
-      pseudo: vote.colleague.pseudo,
-      like_hate: vote.vote.toString()
-    }).subscribe(() => {});
-    this.voteAction.next(vote.vote);
   }
 }

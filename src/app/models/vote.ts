@@ -3,5 +3,7 @@ import {LikeHate} from "./like-hate";
 
 export interface Vote {
   colleague: Colleague,
-  vote: LikeHate
+  vote: LikeHate,
+  score: number;
+  createdAt: Date
 }

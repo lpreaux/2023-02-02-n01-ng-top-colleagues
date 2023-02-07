@@ -20,11 +20,11 @@ export class VotingHistoryItemComponent implements OnInit{
     if (!this.vote) throw new Error("Le vote ne peut pas être vide");
     switch (this.vote.vote) {
       case LikeHate.LIKE: {
-        this.message = `${this.vote.colleague.pseudo} est adoré, il a désormais un score de ${this.scorePipe.transform(this.vote.colleague.score)} :-)`
+        this.message = `${this.vote.colleague.pseudo} est adoré, il a désormais un score de ${this.scorePipe.transform(this.vote.score)} :-)`
         break;
       }
       case LikeHate.HATE: {
-        this.message = `${this.vote.colleague.pseudo} est détesté, il a désormais un score de ${this.scorePipe.transform(this.vote.colleague.score)} :-(`
+        this.message = `${this.vote.colleague.pseudo} est détesté, il a désormais un score de ${this.scorePipe.transform(this.vote.score)} :-(`
       }
     }
   }
