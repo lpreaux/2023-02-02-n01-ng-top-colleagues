@@ -5,7 +5,7 @@
 
   <div class="tc-section-layout--content">
     <div class="grid">
-      <div *ngFor="let vote of votes; last as last" class="tc-grid-item">
+      <div *ngFor="let vote of votes$ | async" class="tc-grid-item">
         <tc-voting-history-item [vote]="vote" (deleteRequest)="onDeleteRequest($event)"></tc-voting-history-item>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Colleague} from "../../../models/colleague";
+import {ColleagueApi} from "../../../models/colleague-api";
 
 @Component({
   selector: 'tc-create-colleague-forms',
@@ -7,9 +7,13 @@ import {Colleague} from "../../../models/colleague";
   styleUrls: ['./create-colleague-forms.component.scss']
 })
 export class CreateColleagueFormsComponent {
-  colleague: Colleague = {photo: "", pseudo: "", score: 0};
+  colleague: ColleagueApi = {
+    pseudo: '',
+    photo: '',
+    first: '',
+    last: '',
+  };
   submit() {
-
     console.log(this.colleague);
   }
 }

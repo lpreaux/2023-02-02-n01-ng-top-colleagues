@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class ColleagueListComponent implements OnInit {
 
-  colleagues$?: Observable<Colleague[]>;
+  colleagues$!: Observable<Colleague[]>;
 
   constructor(
     private colleagueService: ColleagueService
@@ -21,6 +21,6 @@ export class ColleagueListComponent implements OnInit {
   }
 
   updateList() {
-    this.colleagueService.list();
+    this.colleagues$ = this.colleagueService.list();
   }
 }

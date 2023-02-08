@@ -9,7 +9,8 @@ import {VoteService} from "../../../providers/vote.service";
   styleUrls: ['./colleague.component.scss']
 })
 export class ColleagueComponent implements OnInit{
-  @Input() colleague?: Colleague;
+  @Input()
+  colleague!: Colleague;
 
   likeButtonDisabled = false;
   hateButtonDisabled = false;
@@ -19,17 +20,20 @@ export class ColleagueComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.likeHateDisableling();
+    this.likeHateDisabling();
   }
-
 
   postVote(likeHate: LikeHate) {
-    if (!this.colleague) throw `Field this.colleague is invalid. Here: this.colleague = ${this.colleague}`
-    this.voteService.newVote({pseudo: this.colleague.pseudo, like_hate: likeHate});
+      this.voteService.post({pseudo: this.colleague.pseudo, likeOrHate: likeHate})
+        .subscribe(colleague => {
+          if (colleague.score != null) {
+            this.colleague.score = colleague.score
+          }
+          this.likeHateDisabling();
+        });
   }
 
-  likeHateDisableling() {
-    if (!this.colleague) throw `Field this.colleague is invalid. Here: this.colleague = ${this.colleague}`
+  likeHateDisabling() {
     this.likeButtonDisabled = this.colleague.score >= 1000;
     this.hateButtonDisabled = this.colleague.score <= -1000;
   }

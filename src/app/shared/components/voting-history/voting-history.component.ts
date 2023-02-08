@@ -1,25 +1,31 @@
-import {Component, OnDestroy} from '@angular/core';
-import {Vote} from "../../../models/vote";
+import {Component, OnInit} from '@angular/core';
 import {VoteService} from "../../../providers/vote.service";
+import {VoteApi} from "../../../models/vote-api";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'tc-voting-history',
   templateUrl: './voting-history.component.html'
 })
-export class VotingHistoryComponent implements OnDestroy {
+export class VotingHistoryComponent implements OnInit {
 
-  votes: Vote[] = [];
-  private voteListSub;
+  votes$!: Observable<VoteApi[]>;
 
-  constructor(private voteService: VoteService) {
-    this.voteListSub = this.voteService.voteListObs.subscribe(votes => this.votes = votes);
+  constructor(
+    private voteService: VoteService
+  ) { }
+
+
+  ngOnInit(): void {
+    this.updateList()
+    this.voteService.voteObs.subscribe(() => this.updateList());
   }
 
-  onDeleteRequest(vote: Vote) {
-    this.votes.splice(this.votes.indexOf(vote), 1)
+  updateList() {
+    this.votes$ = this.voteService.list();
   }
 
-  ngOnDestroy(): void {
-    this.voteListSub.unsubscribe();
+  onDeleteRequest(vote: VoteApi) {
+    this.votes$.subscribe(votes => votes.splice(votes.indexOf(vote), 1));
   }
 }
