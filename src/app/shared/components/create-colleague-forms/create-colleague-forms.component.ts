@@ -19,6 +19,7 @@ export class CreateColleagueFormsComponent {
     private colleagueService: ColleagueService
   ) { }
   submit() {
+
     this.colleagueService.post(this.colleague).subscribe();
   }
 }

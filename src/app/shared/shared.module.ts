@@ -19,6 +19,7 @@ import { ScorePipe } from './pipes/score.pipe';
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatInputModule} from "@angular/material/input";
     VotingHistoryComponent,
     ScorePipe,
     CounterComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
+    FirstLastValidatorDirective
   ],
   exports: [
     ColleagueListComponent,

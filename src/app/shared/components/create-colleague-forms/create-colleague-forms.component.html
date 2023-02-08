@@ -1,5 +1,5 @@
 <section class="tc-section tc-section-layout">
-  <form (ngSubmit)="submit()" #createColleagueForm="ngForm">
+  <form tcFirstLastValidator (ngSubmit)="submit()" #createColleagueForm="ngForm">
 
     <mat-form-field appearance="outline" hideRequiredMarker>
       <mat-label>Pseudo</mat-label>
@@ -39,7 +39,10 @@
     </mat-form-field>
     <br>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="createColleagueForm.invalid">Ajouter</button>
+    <div *ngIf="createColleagueForm.errors && createColleagueForm.errors['firstLast']">
+      Le Nom et le Prénom ne peuvent pas être identique.
+    </div>
 
+    <button mat-raised-button color="primary" type="submit" [disabled]="createColleagueForm.invalid">Ajouter</button>
   </form>
 </section>
