@@ -3,9 +3,10 @@
 
     <mat-form-field appearance="outline" hideRequiredMarker>
       <mat-label>Pseudo</mat-label>
-      <input matInput [(ngModel)]="colleague.pseudo" name="pseudo" #pseudo="ngModel" required >
-      <mat-error *ngIf="pseudo.invalid">
-        Pseudo invalide
+      <input matInput tcPseudoValidator [(ngModel)]="colleague.pseudo" name="pseudo" #pseudo="ngModel" required >
+      <mat-error *ngIf="pseudo.errors">
+          <span *ngIf="pseudo.errors['pseudo']">Pseudo déjà pris</span>
+          <span *ngIf="pseudo.errors['required']">Pseudo invalide</span>
       </mat-error>
     </mat-form-field>
     <br>
@@ -43,6 +44,6 @@
       Le Nom et le Prénom ne peuvent pas être identique.
     </div>
 
-    <button mat-raised-button color="primary" type="submit" [disabled]="createColleagueForm.invalid">Ajouter</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!createColleagueForm.valid">Ajouter</button>
   </form>
 </section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ColleagueApi} from "../../../models/colleague-api";
 import {ColleagueService} from "../../../providers/colleague.service";
 
@@ -18,8 +18,9 @@ export class CreateColleagueFormsComponent {
   constructor(
     private colleagueService: ColleagueService
   ) { }
-  submit() {
 
+  submit() {
     this.colleagueService.post(this.colleague).subscribe();
   }
+
 }

@@ -20,6 +20,7 @@ import { CreateColleagueFormsComponent } from './components/create-colleague-for
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
+import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
     ScorePipe,
     CounterComponent,
     CreateColleagueFormsComponent,
-    FirstLastValidatorDirective
+    FirstLastValidatorDirective,
+    PseudoValidatorDirective
   ],
   exports: [
     ColleagueListComponent,

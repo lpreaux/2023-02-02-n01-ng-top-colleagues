@@ -17,6 +17,10 @@ export class ColleagueService {
     return this.http.get<Colleague[]>(this.API_URL);
   }
 
+  getByPseudo(pseudo: string) {
+    return this.http.get<ColleagueApi>(`${this.API_URL}/${pseudo}`);
+  }
+
   post(colleague: ColleagueApi) {
     return this.http.post<Colleague>(this.API_URL, colleague);
   }
