@@ -11,7 +11,12 @@ export class FirstLastValidatorDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | null {
     const isInvalid = control.value.first === control.value.last && control.value.first?.length > 0;
-    return isInvalid ? { firstLast : 'first name must be different from lastname' } : null;
+    if (isInvalid) {
+      control.get('last')?.setErrors({ firstLast : 'first name must be different from lastname' })
+      control.get('first')?.setErrors({ firstLast : 'first name must be different from lastname' });
+      return { firstLast : 'first name must be different from lastname' };
+    }
+    return null;
   }
 
 }
