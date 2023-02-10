@@ -21,6 +21,7 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
+import { ColleagueDetailsComponent } from './components/colleague-details/colleague-details.component';
 
 
 @NgModule({
@@ -34,13 +35,15 @@ import { PseudoValidatorDirective } from './validators/pseudo-validator.directiv
     CounterComponent,
     CreateColleagueFormsComponent,
     FirstLastValidatorDirective,
-    PseudoValidatorDirective
+    PseudoValidatorDirective,
+    ColleagueDetailsComponent
   ],
   exports: [
     ColleagueListComponent,
     VotingHistoryComponent,
     CounterComponent,
-    CreateColleagueFormsComponent
+    CreateColleagueFormsComponent,
+    ColleagueDetailsComponent,
   ],
   imports: [
     CommonModule,

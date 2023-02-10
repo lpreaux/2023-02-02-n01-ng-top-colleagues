@@ -8,6 +8,8 @@ import { WelcomeModule } from "./pages/welcome/welcome.module";
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.module";
+import { AppRoutingModule } from './app-routing.module';
+import {ColleagueModule} from "./pages/colleague/colleague.module";
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import {CreateColleagueModule} from "./pages/create-colleague/create-colleague.m
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
     SharedModule,
     WelcomeModule,
-    HttpClientModule,
     CreateColleagueModule,
+    ColleagueModule
   ],
   providers: [
   ],

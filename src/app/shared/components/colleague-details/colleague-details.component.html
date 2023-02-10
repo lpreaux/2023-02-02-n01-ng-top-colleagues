@@ -1,0 +1,14 @@
+<section class="tc-section">
+  <h1>{{colleague.pseudo | uppercase}}</h1>
+  <div class="tc-grid">
+    <img class="tc-grid-item" [src]="colleague.photo" alt="">
+    <div class="tc-grid-item">
+      <ul>
+        <li>Nom: {{colleague.last}}</li>
+        <li>Prénom: {{colleague.first}}</li>
+        <li>Score: {{colleague.score}}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+

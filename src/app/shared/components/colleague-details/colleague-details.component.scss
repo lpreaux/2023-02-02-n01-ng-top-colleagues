@@ -1,0 +1,9 @@
+.tc-section {
+  container-type: inline-size;
+}
+
+@container (inline-size >= 350px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
