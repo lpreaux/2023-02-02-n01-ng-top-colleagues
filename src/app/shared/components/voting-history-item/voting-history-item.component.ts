@@ -19,12 +19,10 @@ export class VotingHistoryItemComponent implements OnInit {
   ngOnInit(): void {
     switch (this.vote.like_hate) {
       case LikeHate.LIKE: {
-        console.log("test")
         this.message = `${this.vote.colleague.pseudo} est adoré, il a désormais un score de ${this.scorePipe.transform(this.vote.score)} :-)`
         break;
       }
       case LikeHate.HATE: {
-        console.log("test")
         this.message = `${this.vote.colleague.pseudo} est détesté, il a désormais un score de ${this.scorePipe.transform(this.vote.score)} :-(`
       }
     }

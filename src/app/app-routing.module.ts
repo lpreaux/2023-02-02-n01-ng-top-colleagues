@@ -5,18 +5,20 @@ import {CreateColleaguePage} from "./pages/create-colleague/create-colleague.pag
 import {ColleaguePage} from "./pages/colleague/colleague.page";
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', component: WelcomePage},
+  {path: '', pathMatch: 'full', component: WelcomePage, title: 'Accueil'},
   {
     path: 'colleague',
     children: [
       {
         path: '',
         pathMatch: 'full',
-        component: CreateColleaguePage
+        component: CreateColleaguePage,
+        title: 'Nouveau Collègue'
       },
       {
         path: ':pseudo',
-        component: ColleaguePage
+        component: ColleaguePage,
+        title: 'Détails Collègue'
       }
     ],
   },
